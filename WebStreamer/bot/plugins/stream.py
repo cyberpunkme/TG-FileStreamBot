@@ -31,7 +31,7 @@ async def media_receive_handler(_, m: Message):
         stream_link += f'/{quote_plus(file_name)}'
     logging.info(f"Generated link: {stream_link} for {m.from_user.first_name}")
     await m.reply_text(
-        text = "<code>{}</code>".format(stream_link),
+        text = Generated Link: "<code>{}</code>".format(stream_link),
         quote = True,
-        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Open', url=stream_link)]])
+        reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton('Download Link', url=stream_link)]])
     )
